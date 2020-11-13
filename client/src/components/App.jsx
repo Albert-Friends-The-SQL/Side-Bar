@@ -1,4 +1,6 @@
 import React from 'react';
+import Description from './Description.jsx';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -10,9 +12,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <p>
-          im react
-        </p>
+        <Description/>
       </div>
     )
   }
