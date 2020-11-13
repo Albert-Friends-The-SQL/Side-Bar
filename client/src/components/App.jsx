@@ -9,8 +9,34 @@ import Promotion from './Promotion.jsx';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      mouseEnterWishlist: false,
+      wishlistClicked: false,
+    }
+    // wishlist icon handlers
+    this.handleWishlistMouseEnter = this.handleWishlistMouseEnter.bind(this);
+    this.handleWishlistMouseLeave = this.handleWishlistMouseLeave.bind(this);
+    this.toggleWishlistStatus = this.toggleWishlistStatus.bind(this);
   }
+// wishlist icon handlers
+handleWishlistMouseEnter() {
+  this.setState({
+    mouseEnterWishlist: true
+  })
+}
+
+handleWishlistMouseLeave() {
+  this.setState({
+    mouseEnterWishlist: false
+  })
+}
+
+toggleWishlistStatus() {
+  this.setState({
+    wishlistClicked: !this.state.wishlistClicked
+  })
+}
+
 
 
   render() {
@@ -19,7 +45,7 @@ class App extends React.Component {
         <Description />
         <SizeTable />
         <FindSize />
-        <AddToBag />
+        <AddToBag mouseEnter={this.handleWishlistMouseEnter} mouseLeave={this.handleWishlistMouseLeave} mouseEnterStatus={this.state.mouseEnterWishlist} click={this.toggleWishlistStatus} toggle={this.state.wishlistClicked}/>
         <Promotion/>
       </div>
     )
