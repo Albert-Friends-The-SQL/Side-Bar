@@ -13,6 +13,7 @@
   align-items: center;
   justify-items: center;
   font-family: 'Rubik', sans-serif;
+  background-color: white;
 }
 
 .findSize {
@@ -20,6 +21,7 @@
   display: inline-block;
   margin-top: 10px;
   cursor: pointer;
+  font-family: 'Rubik', sans-serif;
 }
 
 .outOfStock{
@@ -28,6 +30,7 @@
   margin-top: 10px;
   cursor: pointer;
   margin-left: 200px;
+  font-family: 'Rubik', sans-serif;
 }
 
 .addToBag {
@@ -38,12 +41,54 @@
   background-color: black;
   justify-content: space-between;
   font-family:'Rubik', sans-serif;
+  font-size: 18px;
+  position: relative;
 }
 
-#wishlist{
+.wishlist{
   margin-top: 30px;
   margin-left: 30px;
   height: 50px;
   width: 50px;
   background-color: white;
+  position: relative;
+}
+
+.promotion{
+  display: inline-block;
+  text-decoration: underline;
+  font-family: 'Rubik', sans-serif;
+  margin-left: 10px;
+}
+
+.original{
+  font-family: 'Quicksand', sans-serif;
+}
+
+h1{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 46px;
+  margin: 10px 0px;
+}
+
+.login{
+  font-family: 'Noto Sans', sans-serif;
+}
+
+#size-guide{
+  display: inline-block;
+  margin: 50px 10px;
+  text-decoration: underline;
+  font-family: 'Rubik', sans-serif;
+
+}
+
+.size-bottom-controls{
+  display: inline-block;
+}
+
+.signup {
+  display: inline-block;
+  text-decoration: underline;
+  font-family: 'Rubik', sans-serif;
 }
