@@ -1,7 +1,7 @@
 .grid {
   display: grid;
   margin: 0;
-  grid-template-columns: 80px 80px 80px 80px;
+  grid-template-columns: 100px 100px 100px 100px;
   grid-template-rows: 45px 45px 45px;
 
 }
@@ -9,8 +9,15 @@
 .cell {
   border: 1px solid;
   height: 45px;
-  width: 80px;
+  width: 100px;
   align-items: center;
   justify-items: center;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.findSize {
+  text-decoration: underline;
+  display: inline-block;
+  margin-top: 10px;
+  cursor: pointer;
 }

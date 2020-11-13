@@ -1,7 +1,7 @@
 import React from 'react';
 import Description from './Description.jsx';
 import SizeTable from './SizeTable.jsx';
-
+import FindSize from './FindSize.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,6 +15,7 @@ class App extends React.Component {
       <div>
         <Description />
         <SizeTable />
+        <FindSize />
       </div>
     )
   }
