@@ -1,5 +1,6 @@
 import React from 'react';
 import Description from './Description.jsx';
+import SizeTable from './SizeTable.jsx';
 
 
 class App extends React.Component {
@@ -12,7 +13,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Description/>
+        <Description />
+        <SizeTable />
       </div>
     )
   }
