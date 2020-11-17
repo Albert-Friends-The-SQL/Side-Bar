@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import CheckoutContent from './CheckoutContent.jsx'
 const Checkout = (props) => {
   const Checkout = styled.div`
-    display: block;
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -13,6 +13,7 @@ const Checkout = (props) => {
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.5);
+    transition: opacity 0.2s;
   `
 
 
