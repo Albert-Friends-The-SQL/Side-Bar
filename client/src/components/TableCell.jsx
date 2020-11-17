@@ -3,7 +3,7 @@ import data from '../../../data.json';
 import styled from 'styled-components';
 
 
-const TableCell = ({toggle, click, shoe, index }) => {
+const TableCell = ({ click, shoe, index }) => {
   const [mouseEnter, setMouseEnter] = useState(false);
   const [mouseLeave, setMouseLeave] = useState(false);
 
@@ -17,18 +17,19 @@ const TableCell = ({toggle, click, shoe, index }) => {
 
 
   const Button = styled.button`
-  background-color: ${mouseEnter ? 'black' : 'white'};
-  color: ${mouseEnter ? 'white' : 'black'};
-  border: 1px solid;
-  height: 45px;
-  width: 100px;
-  align-items: center;
-  justify-items: center;
-  font-family: 'Rubik', sans-serif;
+    background-color: ${mouseEnter ? 'black' : 'white'};
+    color: ${mouseEnter ? 'white' : 'black'};
+    border: 1px solid;
+    height: 45px;
+    width: 100px;
+    align-items: center;
+    justify-items: center;
+    font-family: 'Rubik', sans-serif;
   `
   return (
     <div>
-      <Button onMouseEnter={mouseOverState} onMouseLeave={mouseLeaveState} >
+      <Button onMouseEnter={mouseOverState} onMouseLeave={mouseLeaveState}
+       onClick={() => {click(shoe)}} >
         {shoe.size}
       </Button>
     </div>

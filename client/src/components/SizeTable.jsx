@@ -8,7 +8,7 @@ const SizeTable = (props) => (
     <h3 className="login">Select Size</h3>
     <div className="grid">
     {data.map((shoe, index) => {
-    return <TableCell shoe={shoe} key={index} index={index} toggle={props.toggle} click={props.click}/>
+    return <TableCell shoe={shoe} key={index} index={index} click={props.click}/>
   })}
     </div>
   </div>

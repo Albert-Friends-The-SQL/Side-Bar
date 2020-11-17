@@ -5,7 +5,10 @@ import FindSize from './FindSize.jsx';
 import AddToBag from './AddToBag.jsx';
 import Promotion from './Promotion.jsx';
 import styled from 'styled-components';
-
+import axios from 'axios';
+import Shipping from './Modals/Shipping/Container.jsx';
+import Checkout from './Modals/Checkout/Checkout.jsx'
+import $ from 'jquery';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,14 +16,24 @@ class App extends React.Component {
     this.state = {
       mouseEnterWishlist: false,
       wishlistClicked: false,
-      sizeTableClicked: false
+      size: null,
+      color: 'grey',
+      name: 'NMD_R1 SHOES',
+      price: 140,
+      quantity: 1
     }
+
     // wishlist icon handlers
     this.handleWishlistMouseEnter = this.handleWishlistMouseEnter.bind(this);
     this.handleWishlistMouseLeave = this.handleWishlistMouseLeave.bind(this);
     this.toggleWishlistStatus = this.toggleWishlistStatus.bind(this);
-    // Size Table handlers
-    this.toggleSizeTableStatus = this.toggleSizeTableStatus.bind(this);
+
+    //size table
+    this.handleSizeTableClick = this.handleSizeTableClick.bind(this);
+
+    //checkout
+    this.handleCheckOut = this.handleCheckOut.bind(this);
+
   }
 // wishlist icon handlers
 handleWishlistMouseEnter() {
@@ -43,21 +56,40 @@ toggleWishlistStatus() {
 
 // size Table handlers
 
-toggleSizeTableStatus() {
+handleCheckOut() {
+  const { size, color, name, price, quantity } = this.state;
+    axios.post('./products', {
+      size: size,
+      color: color,
+      name: name,
+      price: price,
+      quantity: quantity
+    })
+    .then((response) => {console.log(response);
+    $('.checkout').css('display', 'block')}
+    )
+    .catch((err) => console.log(err))
+
+}
+
+handleSizeTableClick(data) {
   this.setState({
-    sizeTableClicked: !this.state.sizeTableClicked
+    size: data.size
   })
 }
+
 
 
   render() {
     return (
       <div>
         <Description />
-        <SizeTable click={this.toggleSizeTableStatus} toggle={this.state.sizeTableClicked}/>
+        <SizeTable click={this.handleSizeTableClick}/>
         <FindSize />
-        <AddToBag mouseEnter={this.handleWishlistMouseEnter} mouseLeave={this.handleWishlistMouseLeave} mouseEnterStatus={this.state.mouseEnterWishlist} click={this.toggleWishlistStatus} toggle={this.state.wishlistClicked}/>
+        <AddToBag mouseEnter={this.handleWishlistMouseEnter} mouseLeave={this.handleWishlistMouseLeave} mouseEnterStatus={this.state.mouseEnterWishlist} click={this.toggleWishlistStatus} toggle={this.state.wishlistClicked} checkout={this.handleCheckOut}/>
         <Promotion/>
+        <Shipping />
+        <Checkout/>
       </div>
     )
   }

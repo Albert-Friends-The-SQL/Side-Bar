@@ -1,6 +1,11 @@
 import React from 'react';
+import $ from 'jquery';
 
 const AddToBag = (props) => {
+
+  const show = () => {
+    $('.checkout').css('display', 'block');
+  }
 
   const wishlist = () =>{
     const mouseState = props.mouseEnterStatus;
@@ -16,7 +21,7 @@ const AddToBag = (props) => {
 
   return (
   <div>
-    <button className="addToBag">Add To Bag →</button>
+    <button className="addToBag" onClick={props.checkout} >Add To Bag →</button>
     <button className="wishlist" onMouseEnter={props.mouseEnter} onMouseLeave={props.mouseLeave} onClick={props.click}>
     {wishlist()}
     </button>
