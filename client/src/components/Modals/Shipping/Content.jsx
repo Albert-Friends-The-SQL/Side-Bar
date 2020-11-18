@@ -4,7 +4,10 @@ import $ from 'jquery';
 
 const ShippingContent = (props) => {
   const hide = () => {
-    $('.shippingContainer').css('display', 'none');
+    $('.shippingContainer').css({
+      "visibility": "hidden",
+      "opacity": "0"
+    });
   }
 
   const ShippingContent = styled.div`
@@ -14,14 +17,26 @@ const ShippingContent = (props) => {
     border: 1px solid #888;
     width: 60%; /* Could be more or less, depending on screen size */
     height: 20%;
+    position: relative;
   `
 
-  const Button = styled.button`
+  const Exit = styled.button`
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  cursor: pointer;
+  color: black;
+  border: 1px solid black;
+  top: 5px;
+  right: 5px;
+  font-size: 32px;
+  font-family: 'Rubik';
   `
 
   return (
     <ShippingContent>
-      <Button onClick={hide}>Close</Button>
+      <Exit onClick={hide}>X</Exit>
       <p>
         <h2>FREE SHIPPING + FREE RETURNS & EXCHANGES</h2>
         <p>Creators Club members unlock free shipping on any order. Sign up or Login.</p>

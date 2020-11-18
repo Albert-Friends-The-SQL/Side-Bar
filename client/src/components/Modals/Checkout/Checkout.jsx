@@ -3,23 +3,24 @@ import styled from 'styled-components';
 import CheckoutContent from './CheckoutContent.jsx'
 const Checkout = (props) => {
   const Checkout = styled.div`
-    display: none;
+    display: flex;
     position: fixed;
     z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
+    height: 100vh;
     background-color: rgba(0,0,0,0.5);
-    transition: opacity 0.2s;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
   `
-
 
   return (
     <Checkout className='checkout'>
-      <CheckoutContent />
+      <CheckoutContent size={props.size} quantity={props.quantity}/>
     </Checkout>
   )
 }

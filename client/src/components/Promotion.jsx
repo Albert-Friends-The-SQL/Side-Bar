@@ -2,7 +2,10 @@ import React from 'react';
 import $ from 'jquery';
 const Promotion = () => {
   const show = () => {
-    $('.shippingContainer').css('display', 'block');
+    $('.shippingContainer').css({
+      "visibility": "visible",
+      "opacity": "1"
+    });
   }
   return (
     <div>

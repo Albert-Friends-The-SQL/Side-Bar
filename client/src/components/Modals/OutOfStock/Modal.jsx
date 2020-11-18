@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import ShippingContent from './Content.jsx'
-
-const ShippingContainer = (props) => {
-  const ShippingContainer = styled.div`
+import Container from './container.jsx';
+const OutOfStock = () => {
+  const OutOfStock = styled.div`
     display: flex;
     position: fixed;
     z-index: 1;
@@ -18,13 +17,11 @@ const ShippingContainer = (props) => {
     opacity: 0;
     transition: visibility 0s, opacity 0.5s;
   `
-
-
   return (
-    <ShippingContainer className='shippingContainer'>
-      <ShippingContent />
-    </ShippingContainer>
+    <OutOfStock className="outofstock">
+      <Container />
+    </OutOfStock>
   )
 }
 
-export default ShippingContainer;
+export default OutOfStock;

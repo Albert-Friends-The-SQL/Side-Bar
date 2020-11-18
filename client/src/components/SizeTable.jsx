@@ -4,7 +4,7 @@ import TableCell from './TableCell.jsx'
 import styled from 'styled-components';
 
 const SizeTable = (props) => (
-  <div>
+  <div className="sizeTable">
     <h3 className="login">Select Size</h3>
     <div className="grid">
     {data.map((shoe, index) => {

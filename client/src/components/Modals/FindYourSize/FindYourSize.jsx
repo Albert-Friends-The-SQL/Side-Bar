@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import ShippingContent from './Content.jsx'
+import FindSizeContent from './FindSizeContent.jsx';
 
-const ShippingContainer = (props) => {
-  const ShippingContainer = styled.div`
+const FindYourSize = () => {
+
+  const FindSize = styled.div`
     display: flex;
     position: fixed;
     z-index: 1;
@@ -17,14 +18,15 @@ const ShippingContainer = (props) => {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s;
-  `
+`
 
 
   return (
-    <ShippingContainer className='shippingContainer'>
-      <ShippingContent />
-    </ShippingContainer>
+    <FindSize className="findSizeChart">
+      <FindSizeContent />
+    </FindSize>
   )
+
 }
 
-export default ShippingContainer;
+export default FindYourSize;

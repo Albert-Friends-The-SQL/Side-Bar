@@ -7,7 +7,9 @@ import Promotion from './Promotion.jsx';
 import styled from 'styled-components';
 import axios from 'axios';
 import Shipping from './Modals/Shipping/Container.jsx';
-import Checkout from './Modals/Checkout/Checkout.jsx'
+import Checkout from './Modals/Checkout/Checkout.jsx';
+import FindYourSize from './Modals/FindYourSize/FindYourSize.jsx';
+import OutOfStock from './Modals/OutOfStock/Modal.jsx';
 import $ from 'jquery';
 
 class App extends React.Component {
@@ -33,66 +35,87 @@ class App extends React.Component {
 
     //checkout
     this.handleCheckOut = this.handleCheckOut.bind(this);
-
   }
-// wishlist icon handlers
-handleWishlistMouseEnter() {
-  this.setState({
-    mouseEnterWishlist: true
-  })
-}
+    // wishlist icon handlers
+    handleWishlistMouseEnter() {
+      this.setState({
+        mouseEnterWishlist: true
+      })
+    }
 
-handleWishlistMouseLeave() {
-  this.setState({
-    mouseEnterWishlist: false
-  })
-}
+    handleWishlistMouseLeave() {
+      this.setState({
+        mouseEnterWishlist: false
+      })
+    }
 
-toggleWishlistStatus() {
-  this.setState({
-    wishlistClicked: !this.state.wishlistClicked
-  })
-}
+    toggleWishlistStatus() {
+      this.setState({
+        wishlistClicked: !this.state.wishlistClicked
+      })
+    }
 
-// size Table handlers
+    // size Table handlers
 
-handleCheckOut() {
-  const { size, color, name, price, quantity } = this.state;
-    axios.post('./products', {
-      size: size,
-      color: color,
-      name: name,
-      price: price,
-      quantity: quantity
-    })
-    .then((response) => {console.log(response);
-    $('.checkout').css('display', 'block')}
-    )
-    .catch((err) => console.log(err))
+    handleCheckOut() {
+      const { size, color, name, price, quantity } = this.state;
 
-}
+      if (size === null) {
+        return;
+      } else {
+        axios.post('./products', {
+          size: size,
+          color: color,
+          name: name,
+          price: price,
+          quantity: quantity
+        })
+          .then(() => {
+            return axios.get('/products')
+              .then((result) => {
+                console.log('get request:', result.data)
+                this.setState({
+                  quantity: Object.keys(result.data).length
+                })
+              })
+              .catch((err) => console.log(err))
+          })
+          .then(() => {
+            $('.checkout').css({
+              "visibility": "visible",
+              "opacity": "1"
+            })
+          }
+          )
+          .catch((err) => console.log(err))
+      }
+    }
 
-handleSizeTableClick(data) {
-  this.setState({
-    size: data.size
-  })
-}
+    handleSizeTableClick(data) {
+      this.setState({
+        size: data.size
+      })
+    }
 
 
 
-  render() {
-    return (
-      <div>
-        <Description />
-        <SizeTable click={this.handleSizeTableClick}/>
-        <FindSize />
-        <AddToBag mouseEnter={this.handleWishlistMouseEnter} mouseLeave={this.handleWishlistMouseLeave} mouseEnterStatus={this.state.mouseEnterWishlist} click={this.toggleWishlistStatus} toggle={this.state.wishlistClicked} checkout={this.handleCheckOut}/>
-        <Promotion/>
-        <Shipping />
-        <Checkout/>
-      </div>
-    )
-  }
+
+    render() {
+      return (
+        <div>
+          <Description />
+          <SizeTable click={this.handleSizeTableClick} />
+          <FindSize />
+          <AddToBag mouseEnter={this.handleWishlistMouseEnter} mouseLeave={this.handleWishlistMouseLeave} mouseEnterStatus={this.state.mouseEnterWishlist} click={this.toggleWishlistStatus} toggle={this.state.wishlistClicked} checkout={this.handleCheckOut} />
+          <Promotion />
+          <Shipping />
+          <Checkout size={this.state.size} quantity={this.state.quantity} />
+          <FindYourSize />
+          <OutOfStock />
+        </div>
+      )
+    }
+
 }
 
 export default App;

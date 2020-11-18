@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const PORT = 3002;
+const PORT = 3004;
 const db = require('./database/database.js');
 
 app.use(express.json());
