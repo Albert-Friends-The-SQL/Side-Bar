@@ -19,30 +19,35 @@ const Left = (props) => {
     margin: 0px 10px;
     height: 10%;
     width: 100%;
+    font-family: "AdihausDIN";
   `
 
   const Price = styled.div`
     margin: 20px 0px 10px 10px;
     height: 10%;
     width: 100%;
+    font-family: "AdihausDIN";
   `
 
   const Color = styled.div`
     margin: 0px 10px;
     height: 20%;
     width: 100%;
+    font-family: "AdihausDIN";
   `
 
   const Size = styled.div`
   margin: 0px 10px;
   height: 20%;
   width: 100%;
+  font-family: "AdihausDIN";
   `
 
   const Quantity = styled.div`
   margin: 0px 10px;
   height: 20%;
   width: 100%;
+  font-family: "AdihausDIN";
   `
   return (
     <Left>

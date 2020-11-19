@@ -33,18 +33,26 @@ const ShippingContent = (props) => {
   font-size: 32px;
   font-family: 'Rubik';
   `
+  const Paragrah = styled.p`
+    font-family: "AdihausDIN";
+  `
 
+  const Header = styled.div`
+  font-size: 28px;
+  font-family: 'adineue PRO KZ Bold';
+  height: 8%;
+  `
   return (
     <ShippingContent>
       <Exit onClick={hide}>X</Exit>
-      <p>
-        <h2>FREE SHIPPING + FREE RETURNS & EXCHANGES</h2>
-        <p>Creators Club members unlock free shipping on any order. Sign up or Login.</p>
+      <Paragrah>
+        <Header>FREE SHIPPING + FREE RETURNS & EXCHANGES</Header>
+        <Paragrah>Creators Club members unlock free shipping on any order. Sign up or Login.</Paragrah>
 
-        <p>If you are not completely satisfied with your adidas.com purchase, for any reason, we will offer you a free return or exchange within 30 days of purchase. Some restrictions apply.</p>
+        <Paragrah>If you are not completely satisfied with your adidas.com purchase, for any reason, we will offer you a free return or exchange within 30 days of purchase. Some restrictions apply.</Paragrah>
 
-        <p>Check out our Return Policy for more details.</p>
-      </p>
+        <Paragrah>Check out our Return Policy for more details.</Paragrah>
+      </Paragrah>
     </ShippingContent>
   )
 }

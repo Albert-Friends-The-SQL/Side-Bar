@@ -15,18 +15,21 @@ const Content = () => {
 
   const Header = styled.div`
     font-size: 28px;
-    font-weight: bold;
+    font-family: 'adineue PRO KZ Bold';
     height: 8%;
   `
 
   const SubHeading = styled.div`
     margin-bottom: 10px;
+    font-family: "AdihausDIN";
+
   `
   const SizeChart = styled.div`
     height: 25%;
   `
   const SizeHeader = styled.div`
     margin: 5px 0px;
+    font-family: "AdihausDIN";
   `
   const Required = styled.span`
     color: red;
@@ -69,6 +72,9 @@ const Content = () => {
     font-size: 32px;
     font-family: 'Rubik';
   `
+  const Paragraph = styled.p`
+    font-family: "AdihausDIN";
+  `
   return (
     <div>
       <Header>Find My Size</Header>
@@ -81,7 +87,7 @@ const Content = () => {
         )}
       </SizeChart>
       <div>
-        <Email type="email" placeholder="Email" required></Email>
+        <Email type="email" placeholder='Email' required></Email>
       </div>
       <AgeDiv>
         <form>
@@ -96,7 +102,7 @@ const Content = () => {
         </form>
       </AgeDiv>
       <Button>Sign Up →</Button>
-      <p>By clicking Sign Up, you have read and agreed to the adidas <u>Privacy Notice</u></p>
+      <Paragraph>By clicking Sign Up, you have read and agreed to the adidas <u>Privacy Notice</u></Paragraph>
     </div>
 
   )

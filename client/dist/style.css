@@ -1,3 +1,9 @@
+@import url(//db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN);
+@import url(//db.onlinewebfonts.com/c/36b94f058581f2e0ace7e0017351d5b6?family=adineue+PRO+KZ+Bold);
+
+@font-face {font-family: "AdihausDIN"; src: url("//db.onlinewebfonts.com/t/c0cd6ec8ce6d2bbd315a13b62ed13550.eot"); src: url("//db.onlinewebfonts.com/t/c0cd6ec8ce6d2bbd315a13b62ed13550.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/c0cd6ec8ce6d2bbd315a13b62ed13550.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/c0cd6ec8ce6d2bbd315a13b62ed13550.woff") format("woff"), url("//db.onlinewebfonts.com/t/c0cd6ec8ce6d2bbd315a13b62ed13550.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/c0cd6ec8ce6d2bbd315a13b62ed13550.svg#AdihausDIN") format("svg"); }
+@font-face {font-family: "adineue PRO KZ Bold"; src: url("//db.onlinewebfonts.com/t/36b94f058581f2e0ace7e0017351d5b6.eot"); src: url("//db.onlinewebfonts.com/t/36b94f058581f2e0ace7e0017351d5b6.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/36b94f058581f2e0ace7e0017351d5b6.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/36b94f058581f2e0ace7e0017351d5b6.woff") format("woff"), url("//db.onlinewebfonts.com/t/36b94f058581f2e0ace7e0017351d5b6.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/36b94f058581f2e0ace7e0017351d5b6.svg#adineue PRO KZ Bold") format("svg"); }
+
 .grid {
   display: grid;
   margin: 0;
@@ -104,4 +110,21 @@ h1{
 #reviewNum{
   font-family: 'Rubik', sans-serif;
   text-decoration: underline;
+}
+
+.sizeCell:nth-child(even){
+    background-color: #ebedee;
+}
+
+label {
+  font-family: "AdihausDIN";
+}
+
+input::-webkit-input-placeholder {
+  font-family: "AdihausDIN";
+}
+
+.outOfStockSize:hover {
+  background-color: black;
+  color:white;
 }

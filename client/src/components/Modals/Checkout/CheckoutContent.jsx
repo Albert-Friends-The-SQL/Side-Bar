@@ -40,8 +40,10 @@ const CheckoutContent = (props) => {
   `
 
   const CheckoutTitle = styled.div`
-    height: 20%;
+    height: 15%;
     width: 100%;
+    font-family: 'adineue PRO KZ Bold';
+    font-size: 28px;
   `
   const SubContentLeft = styled.div`
     height: 80%;

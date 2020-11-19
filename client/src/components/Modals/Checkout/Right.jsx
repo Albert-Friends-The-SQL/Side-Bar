@@ -11,26 +11,31 @@ const Right = (props) => {
   const Title = styled.div`
     height: 10%;
     width: 100%;
+    font-family: "AdihausDIN";
   `
 
   const ItemCount = styled.div`
     margin: 20px 0px 10px 0px;
     height: 10%;
     width: 100%;
+    font-family: "AdihausDIN";
   `
   const TotalCost = styled.div`
     display: flex;
     height: 10%;
     width: 100%;
     justify-content: space-between;
+    font-family: "AdihausDIN";
   `
   const TotalText = styled.div`
     height: 10%;
     width: 40%;
+    font-family: "AdihausDIN";
   `
   const TotalAmount = styled.div`
     height: 10%;
     width: 20%;
+    font-family: "AdihausDIN";
   `
   const TotalDelivery = styled.div`
     display: flex;
@@ -38,16 +43,19 @@ const Right = (props) => {
     width: 100%;
     justify-content: space-between;
     border-bottom: 1px solid black;
+    font-family: "AdihausDIN";
   `
 
   const TotalDeliveryText = styled.div`
     height: 10%;
     width: 40%;
+    font-family: "AdihausDIN";
   `
 
   const TotalDeliveryAmount = styled.div`
     height: 10%;
     width: 20%;
+    font-family: "AdihausDIN";
   `
 
   const Lower = styled.div`
@@ -60,18 +68,21 @@ const Right = (props) => {
     height: 10%;
     width: 100%;
     justify-content: space-between;
+    margin-top: 5px;
   `
 
   const Total = styled.div`
     height: 10%;
     width: 40%;
+    font-family: 'adineue PRO KZ Bold';
   `
   const PriceSum = styled.div`
     height: 10%;
     width: 20%;
+    font-family: 'adineue PRO KZ Bold';
   `
   const CheckoutButton = styled.button`
-    margin-top: 10px;
+    margin-top: 2%;
     height: 50px;
     width: 300px;
     color: black;
@@ -83,7 +94,7 @@ const Right = (props) => {
     cursor: pointer;
   `
   const ViewBagButton = styled.button`
-    margin-top: 20px;
+    margin-top: 2%;
     height: 50px;
     width: 300px;
     color: white;

@@ -15,7 +15,7 @@ const Size = ({shoe, index}) => {
     margin: 5px 5px;
   `
   return (
-  <Size>{shoe.size}</Size>
+  <Size className="outOfStockSize">{shoe.size}</Size>
   )
 }
 

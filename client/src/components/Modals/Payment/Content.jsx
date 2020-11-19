@@ -11,11 +11,11 @@ const Content = () => {
   }
   const Header = styled.div`
     font-size: 28px;
-    font-weight: bold;
+    font-family: 'adineue PRO KZ Bold';
     height: 8%;
   `
   const Paragraph = styled.p`
-
+    font-family: "AdihausDIN";
   `
   const Exit = styled.button`
     position: absolute;

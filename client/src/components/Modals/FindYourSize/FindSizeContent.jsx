@@ -20,7 +20,6 @@ const Content = () => {
 `
   return (
     <SizeContent>
-      <img src="https://adidasicons.s3-us-west-1.amazonaws.com/Screen+Shot+2020-11-17+at+4.27.17+PM.png"></img>
     </SizeContent>
   )
 }

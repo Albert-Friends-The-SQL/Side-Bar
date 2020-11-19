@@ -15,7 +15,7 @@ const Checkout = (props) => {
     align-items: center;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s, opacity 0.5s;
+    transition: visibility 1s, opacity 0.5s;
   `
 
   return (

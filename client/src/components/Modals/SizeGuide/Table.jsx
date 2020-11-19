@@ -2,7 +2,7 @@ import React from 'react';
 import data from '../../../../../sizeguide.json';
 import styled from 'styled-components';
 import Cell from './Cell.jsx';
-import title from '../../../../../title.json';
+
 
 const Table = ({category, index, sizes}) => {
   const Container = styled.div`
@@ -21,6 +21,7 @@ const Table = ({category, index, sizes}) => {
     /* width: max-content; */
     align-items: stretch;
     min-width: 100%;
+    /* position: relative; */
   `
   const Head = styled.div`
     /* border-right: 1px solid black; */
@@ -30,33 +31,24 @@ const Table = ({category, index, sizes}) => {
     height: 50px;
     align-items: center;
     position: sticky;
+    left: 0;
     border-right: 2px solid black;
-    background: grey;
-  `
-  const Title = styled.div`
-    display: flex;
-    width: 130px;
-    justify-content: center;
-    height: 50px;
-    align-items: center;
-    position: sticky;
-
+    background-color: white;
+    font-family: 'AdihausDIN';
   `
 
 
   return (
     <Container>
       <Table>
-        <Row>
-          <Head>{category.name}</Head>
+        <Row >
+          <Head >{category.name}</Head>
           {category.size.map((size)=> {
-            return <Cell size={size} key={index} index={index}></Cell>
+            return <Cell size={size} key={index} index={index} ></Cell>
           })}
         </Row>
-
       </Table>
     </Container>
-
   )
 }
 

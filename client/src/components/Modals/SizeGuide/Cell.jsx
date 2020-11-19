@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Cell = ({size}) => {
+const Cell = ({size, index}) => {
   const Head = styled.div`
   /* border: 1px solid black; */
   /* border-right: 1px solid black; */
@@ -9,10 +9,10 @@ const Cell = ({size}) => {
   justify-content: center;
   width: 130px;
   align-items: center;
-
+  font-family: 'Rubik', sans-serif;
 `
   return (
-    <Head>{size}</Head>
+    <Head className="sizeCell">{size}</Head>
   )
 }
 
