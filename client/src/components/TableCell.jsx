@@ -16,6 +16,7 @@ const TableCell = ({ click, shoe, index }) => {
     align-items: center;
     justify-items: center;
     font-family: 'Rubik', sans-serif;
+    cursor: pointer;
   `
     const ButtonActive = styled.button`
     background-color: black;
@@ -26,6 +27,7 @@ const TableCell = ({ click, shoe, index }) => {
     align-items: center;
     justify-items: center;
     font-family: 'Rubik', sans-serif;
+    cursor: pointer;
   `
   const changeButton = () => {
     if (isClicked) {

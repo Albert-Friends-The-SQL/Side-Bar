@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "nodemon server.js",
     "bundle": "webpack --watch"
   },
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/YodellingPickles/Adidas-Side-Bar#readme",
   "dependencies": {
     "axios": "^0.21.0",
+    "babel-preset-env": "^1.7.0",
     "express": "^4.17.1",
     "jquery": "^3.5.1",
     "mongoose": "^5.10.14",
@@ -34,6 +35,10 @@
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
-    "babel-loader": "^8.2.1"
+    "babel-loader": "^8.2.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "enzyme-to-json": "^3.6.1",
+    "jest": "^26.6.3"
   }
 }

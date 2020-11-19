@@ -13,7 +13,7 @@ const FindSize = (props) => {
   }
   return (
   <div className="size-bottom-controls">
-    <span className="findSize" onClick={show}><img src="http://integrations.fitanalytics.com/shop/adidas/adidas-icon-black.svg"/>Find your size</span>
+    {/* <span className="findSize" onClick={show}><img src="http://integrations.fitanalytics.com/shop/adidas/adidas-icon-black.svg"/>Find your size</span> */}
     <span className="outOfStock" onClick={showOutOfStock}>Size out of stock?</span>
   </div>
   )

@@ -18,7 +18,7 @@
   width: 100px;
   align-items: center;
   justify-items: center;
-  font-family: 'Rubik', sans-serif;
+  font-family: "AdihausDIN";
   background-color: white;
 }
 
@@ -27,7 +27,7 @@
   display: inline-block;
   margin-top: 10px;
   cursor: pointer;
-  font-family: 'Rubik', sans-serif;
+  font-family: "AdihausDIN"
 }
 
 .outOfStock{
@@ -35,8 +35,7 @@
   display: inline-block;
   margin-top: 10px;
   cursor: pointer;
-  margin-left: 200px;
-  font-family: 'Rubik', sans-serif;
+  font-family: "AdihausDIN";
 }
 
 .addToBag {
@@ -46,14 +45,59 @@
   color: white;
   background-color: black;
   justify-content: space-between;
-  font-family:'Rubik', sans-serif;
+  font-family: "AdihausDIN";
   font-size: 18px;
   position: relative;
   cursor: pointer;
 }
+.addToBag:before {
+  content: '';
+  position: absolute;
+  display: block;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  bottom: -5px;
+  height: 5px;
+  left: 4px;
+  width: 100%;
+}
+.addToBag:after {
+  content: '';
+  position: absolute;
+  display: block;
+  border-right: 1px solid #000;
+  border-top: 1px solid #000;
+  height: 100%;
+  right: -5px;
+  top: 4px;
+  width: 5px;
+}
+.signUpButton:before{
+  content: '';
+  position: absolute;
+  display: block;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  bottom: -5px;
+  height: 5px;
+  left: 4px;
+  width: 100%;
+}
+
+.signUpButton:after {
+  content: '';
+  position: absolute;
+  display: block;
+  border-right: 1px solid #000;
+  border-top: 1px solid #000;
+  height: 100%;
+  right: -5px;
+  top: 4px;
+  width: 5px;
+}
 
 .wishlist{
-  margin-top: 30px;
+  margin-top: 40px;
   margin-left: 30px;
   height: 50px;
   width: 50px;
@@ -65,13 +109,13 @@
 .promotion{
   display: inline-block;
   text-decoration: underline;
-  font-family: 'Rubik', sans-serif;
+  font-family: "AdihausDIN";
   margin-left: 10px;
   cursor: pointer;
 }
 
 .original{
-  font-family: 'Quicksand', sans-serif;
+  font-family: "AdihausDIN"
 }
 
 h1{
@@ -81,14 +125,14 @@ h1{
 }
 
 .login{
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "AdihausDIN"
 }
 
 #size-guide{
   display: inline-block;
   margin: 50px 10px;
   text-decoration: underline;
-  font-family: 'Rubik', sans-serif;
+  font-family: "AdihausDIN";
   cursor: pointer;
 }
 
@@ -99,7 +143,7 @@ h1{
 .signup {
   display: inline-block;
   text-decoration: underline;
-  font-family: 'Rubik', sans-serif;
+  font-family: "AdihausDIN";
 }
 
 .stars{
@@ -108,7 +152,7 @@ h1{
 }
 
 #reviewNum{
-  font-family: 'Rubik', sans-serif;
+  font-family: "AdihausDIN";
   text-decoration: underline;
 }
 
@@ -127,4 +171,12 @@ input::-webkit-input-placeholder {
 .outOfStockSize:hover {
   background-color: black;
   color:white;
+}
+
+h2 {
+  font-family: "AdihausDIN";
+}
+
+.warning {
+  color: red;
 }

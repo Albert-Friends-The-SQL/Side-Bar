@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import styled from 'styled-components';
 
 const AddToBag = (props) => {
 
@@ -18,14 +19,30 @@ const AddToBag = (props) => {
       return <img src="https://img.icons8.com/material-outlined/36/000000/like.png"/>
     }
   }
+  const Bag = styled.div`
+    display: flex;
+    align-items: center;
+  `
+  const AddButton = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  `
+  const Add = styled.div`
+    margin-left: 5%;
+  `
+  const Arrow = styled.div`
+    font-size: 20px;
+    margin-right: 5%;
+  `
 
   return (
-  <div>
-    <button className="addToBag" onClick={props.checkout} >Add To Bag →</button>
+  <Bag>
+    <button className="addToBag" onClick={()=>{props.checkout()}} ><AddButton><Add>Add To Bag</Add> <Arrow>→</Arrow></AddButton></button>
     <button className="wishlist" onMouseEnter={props.mouseEnter} onMouseLeave={props.mouseLeave} onClick={props.click}>
     {wishlist()}
     </button>
-  </div>
+  </Bag>
   )
 }
 

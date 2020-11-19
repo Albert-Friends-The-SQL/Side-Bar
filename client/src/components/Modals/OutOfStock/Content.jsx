@@ -25,7 +25,9 @@ const Content = () => {
 
   `
   const SizeChart = styled.div`
-    height: 25%;
+    display:flex;
+    height: 17%;
+    flex-wrap: wrap;
   `
   const SizeHeader = styled.div`
     margin: 5px 0px;
@@ -50,7 +52,7 @@ const Content = () => {
     color: white;
     background-color: black;
     justify-content: space-between;
-    font-family:'Rubik', sans-serif;
+    font-family: "AdihausDIN";
     font-size: 18px;
     position: relative;
     cursor: pointer;
@@ -75,14 +77,30 @@ const Content = () => {
   const Paragraph = styled.p`
     font-family: "AdihausDIN";
   `
+
+  const SignUp = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  `
+  const Arrow = styled.div`
+  font-size: 20px;
+  margin-right: 5%;
+`
+
+  const Wrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  `
   return (
     <div>
       <Header>Find My Size</Header>
       <Exit onClick={hide}>X</Exit>
       <SubHeading>Select your size and we'll email you if it's back in stock</SubHeading>
-
+      <SizeHeader>Size <Required>*</Required></SizeHeader>
       <SizeChart>
-        <SizeHeader>Size <Required>*</Required></SizeHeader>
+
         {sizeTable.map((shoe, index) => { return <Size shoe={shoe} key={index}>size</Size> }
         )}
       </SizeChart>
@@ -101,7 +119,7 @@ const Content = () => {
           <label htmlFor="signup">Sign me up to adidas Creators Club, featuring exclusive offers, latest product info, news about upcoming events and more. Please see our Terms & Conditions and Privacy Policy and Creators Club Terms & Conditions for more details. I agree to receive personalised email marketing messages from adidas America, Inc. and runtastic GmbH ("runtastic"). <Required>*</Required></label>
         </form>
       </AgeDiv>
-      <Button>Sign Up →</Button>
+      <Button className="signUpButton"><Wrapper><SignUp>Sign Up</SignUp> <Arrow>→</Arrow></Wrapper></Button>
       <Paragraph>By clicking Sign Up, you have read and agreed to the adidas <u>Privacy Notice</u></Paragraph>
     </div>
 

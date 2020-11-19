@@ -88,7 +88,7 @@ const Right = (props) => {
     color: black;
     background-color: white;
     justify-content: space-between;
-    font-family:'Rubik', sans-serif;
+    font-family: "AdihausDIN";
     font-size: 18px;
     position: relative;
     cursor: pointer;
@@ -100,11 +100,23 @@ const Right = (props) => {
     color: white;
     background-color: black;
     justify-content: space-between;
-    font-family:'Rubik', sans-serif;
+    font-family: "AdihausDIN";
     font-size: 18px;
     position: relative;
     cursor: pointer;
   `
+  const AddButton = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+const Add = styled.div`
+  margin-left: 5%;
+`
+const Arrow = styled.div`
+  font-size: 20px;
+  margin-right: 5%;
+`
 
   const price = props.quantity * 140;
   return (
@@ -113,7 +125,7 @@ const Right = (props) => {
         <ItemCount>{props.quantity} items</ItemCount>
         <TotalCost>
           <TotalText>Total Product Cost:</TotalText>
-          <TotalAmount>${price}.00</TotalAmount>
+          <TotalAmount className="totalAmount">${price}.00</TotalAmount>
         </TotalCost>
         <TotalDelivery>
           <TotalDeliveryText>Total Delivery Cost:</TotalDeliveryText>
@@ -123,8 +135,8 @@ const Right = (props) => {
           <Total>Total</Total>
         <PriceSum>${price}.00</PriceSum>
         </TotalRow>
-        <ViewBagButton>View Bag →</ViewBagButton>
-        <CheckoutButton>Checkout →</CheckoutButton>
+        <ViewBagButton><AddButton><Add>View Bag</Add> <Arrow>→</Arrow></AddButton></ViewBagButton>
+        <CheckoutButton><AddButton><Add>Check out</Add> <Arrow>→</Arrow></AddButton></CheckoutButton>
     </Right>
   )
 }

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Cell from './Cell.jsx';
 
 
-const Table = ({category, index, sizes}) => {
+const Table = ({category, index, sizes, header}) => {
   const Container = styled.div`
     display: flex;
     width: 80%
@@ -25,6 +25,8 @@ const Table = ({category, index, sizes}) => {
   `
   const Head = styled.div`
     /* border-right: 1px solid black; */
+    background-color: ${header ? 'black !important' : 'white'};
+    color: ${header ? 'white !important' : 'black'};
     display: flex;
     width: 130px;
     justify-content: center;
@@ -43,8 +45,8 @@ const Table = ({category, index, sizes}) => {
       <Table>
         <Row >
           <Head >{category.name}</Head>
-          {category.size.map((size)=> {
-            return <Cell size={size} key={index} index={index} ></Cell>
+          {category.size.map((size, index)=> {
+            return <Cell size={size} key={index} index={index} header={category.name === 'Measurement'}></Cell>
           })}
         </Row>
       </Table>
