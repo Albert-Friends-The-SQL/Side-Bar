@@ -10,6 +10,7 @@ import Shipping from './Modals/Shipping/Container.jsx';
 import Checkout from './Modals/Checkout/Checkout.jsx';
 import FindYourSize from './Modals/FindYourSize/FindYourSize.jsx';
 import OutOfStock from './Modals/OutOfStock/Modal.jsx';
+import Payment from './Modals/Payment/Modal.jsx';
 import $ from 'jquery';
 
 class App extends React.Component {
@@ -112,6 +113,7 @@ class App extends React.Component {
           <Checkout size={this.state.size} quantity={this.state.quantity} />
           <FindYourSize />
           <OutOfStock />
+          <Payment />
         </div>
       )
     }
@@ -119,3 +121,8 @@ class App extends React.Component {
 }
 
 export default App;
+
+// 1. Size table state unchanged sometimes
+ // check out css hover
+// 2. no transition for add to bag modal
+// 3. go over the design of table

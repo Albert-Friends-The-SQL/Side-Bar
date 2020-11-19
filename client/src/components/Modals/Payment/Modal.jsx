@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import Container from './Container.jsx';
-const OutOfStock = () => {
-  const OutOfStock = styled.div`
+
+const Payment = () => {
+  const Payment = styled.div`
     display: flex;
     position: fixed;
     z-index: 1;
@@ -18,10 +19,10 @@ const OutOfStock = () => {
     transition: visibility 0s, opacity 0.5s;
   `
   return (
-    <OutOfStock className="outofstock">
+    <Payment className="payment">
       <Container />
-    </OutOfStock>
+    </Payment>
   )
 }
 
-export default OutOfStock;
+export default Payment;
