@@ -64,7 +64,7 @@ class App extends React.Component {
       if (size === null) {
         return;
       } else {
-        axios.post('./products', {
+        axios.post('./api/products', {
           size: size,
           color: color,
           name: name,
@@ -72,7 +72,7 @@ class App extends React.Component {
           quantity: quantity
         })
           .then(() => {
-            return axios.get('/products')
+            return axios.get('/api/products')
               .then((result) => {
                 console.log('get request:', result.data)
                 this.setState({
