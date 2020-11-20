@@ -102,14 +102,14 @@ const Modal = ({ open, onClose }) => {
       return (
         <Chart>
           {data.map((category, index) => {
-            return <Table category={category} key={index} />
+            return <Table category={category} key={index} header={category.name==='Measurement'}/>
           })}
         </Chart>
     ) } else {
       return (
         <Chart>
         {data2.map((category, index) => {
-          return <Table category={category} key={index} />
+          return <Table category={category} key={index} header={category.name==='Measurement'}/>
         })}
       </Chart>
       )
