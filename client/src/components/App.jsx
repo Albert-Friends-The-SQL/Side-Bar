@@ -11,6 +11,7 @@ import Checkout from './Modals/Checkout/Checkout.jsx';
 import OutOfStock from './Modals/OutOfStock/Modal.jsx';
 import Payment from './Modals/Payment/Modal.jsx';
 import $ from 'jquery';
+import '../../dist/style.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -22,7 +23,8 @@ class App extends React.Component {
       color: 'grey',
       name: 'NMD_R1 SHOES',
       price: 140,
-      quantity: 1
+      quantity: 1,
+      data: null
     }
 
     // wishlist icon handlers
@@ -56,6 +58,13 @@ class App extends React.Component {
       })
     }
 
+    // componentDidMount() {
+    //   axios.get("ec2-13-57-191-53.us-west-1.compute.amazonaws.com")
+    //   .then(res => {
+    //   const dataFromServer = res.data;
+    //   this.setState({ data: dataFromServer });
+    // });
+    // }
     // size Table handlers
 
     handleCheckOut() {
