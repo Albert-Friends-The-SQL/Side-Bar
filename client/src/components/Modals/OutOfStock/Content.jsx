@@ -28,6 +28,7 @@ const Content = () => {
     display:flex;
     height: 17%;
     flex-wrap: wrap;
+
   `
   const SizeHeader = styled.div`
     margin: 5px 0px;

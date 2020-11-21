@@ -12,7 +12,7 @@ app.listen(PORT, ()=> {
   console.log(`Listening at Port ${PORT}`)
 })
 
-app.post('/products', (req,res)=> {
+app.post('/api/products', (req,res)=> {
   db.save(req.body, (err, result)=> {
     if (err) {
       console.log(err);
@@ -24,7 +24,7 @@ app.post('/products', (req,res)=> {
 
 })
 
-app.get('/products', (req, res) => {
+app.get('/api/products', (req, res) => {
   db.find((result)=>{
     res.send(result)
   });
