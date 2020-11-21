@@ -38,7 +38,7 @@ const AddToBag = (props) => {
 
   return (
   <Bag>
-    <button className="addToBag" onClick={()=>{props.checkout()}} ><AddButton><Add>Add To Bag</Add> <Arrow>→</Arrow></AddButton></button>
+    <button className="addToBag" onClick={()=>{props.checkout()}} ><AddButton><Add>ADD TO BAG</Add> <Arrow>→</Arrow></AddButton></button>
     <button className="wishlist" onMouseEnter={props.mouseEnter} onMouseLeave={props.mouseLeave} onClick={props.click}>
     {wishlist()}
     </button>
