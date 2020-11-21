@@ -1,8 +1,11 @@
 @import url(//db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN);
 @import url(//db.onlinewebfonts.com/c/36b94f058581f2e0ace7e0017351d5b6?family=adineue+PRO+KZ+Bold);
+@import url('//db.onlinewebfonts.com/c/80b09c4ebad1bdde194e60b3dd2c5071?family=AdihausDIN+Cn');
 
 @font-face {font-family: "AdihausDIN"; src: url("//db.onlinewebfonts.com/t/c0cd6ec8ce6d2bbd315a13b62ed13550.eot"); src: url("//db.onlinewebfonts.com/t/c0cd6ec8ce6d2bbd315a13b62ed13550.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/c0cd6ec8ce6d2bbd315a13b62ed13550.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/c0cd6ec8ce6d2bbd315a13b62ed13550.woff") format("woff"), url("//db.onlinewebfonts.com/t/c0cd6ec8ce6d2bbd315a13b62ed13550.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/c0cd6ec8ce6d2bbd315a13b62ed13550.svg#AdihausDIN") format("svg"); }
 @font-face {font-family: "adineue PRO KZ Bold"; src: url("//db.onlinewebfonts.com/t/36b94f058581f2e0ace7e0017351d5b6.eot"); src: url("//db.onlinewebfonts.com/t/36b94f058581f2e0ace7e0017351d5b6.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/36b94f058581f2e0ace7e0017351d5b6.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/36b94f058581f2e0ace7e0017351d5b6.woff") format("woff"), url("//db.onlinewebfonts.com/t/36b94f058581f2e0ace7e0017351d5b6.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/36b94f058581f2e0ace7e0017351d5b6.svg#adineue PRO KZ Bold") format("svg"); }
+@font-face {font-family: "AdihausDIN Cn"; src: url("//db.onlinewebfonts.com/t/80b09c4ebad1bdde194e60b3dd2c5071.eot"); src: url("//db.onlinewebfonts.com/t/80b09c4ebad1bdde194e60b3dd2c5071.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/80b09c4ebad1bdde194e60b3dd2c5071.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/80b09c4ebad1bdde194e60b3dd2c5071.woff") format("woff"), url("//db.onlinewebfonts.com/t/80b09c4ebad1bdde194e60b3dd2c5071.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/80b09c4ebad1bdde194e60b3dd2c5071.svg#AdihausDIN Cn") format("svg"); }
+
 
 .grid {
   display: grid;
@@ -112,6 +115,7 @@
   font-family: "AdihausDIN";
   margin-left: 10px;
   cursor: pointer;
+
 }
 
 .original{
@@ -119,7 +123,7 @@
 }
 
 h1{
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "AdihausDIN Cn";
   font-size: 46px;
   margin: 10px 0px;
 }
@@ -148,7 +152,8 @@ h1{
 
 .stars{
   display: inline-block;
-  margin: 0px 350px;
+  margin-left: 25%;
+  padding-left: 30%;
 }
 
 #reviewNum{

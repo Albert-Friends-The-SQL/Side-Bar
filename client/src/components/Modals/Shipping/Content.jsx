@@ -31,7 +31,7 @@ const ShippingContent = (props) => {
   top: 5px;
   right: 5px;
   font-size: 32px;
-  font-family: 'Rubik';
+  font-family: 'Arial';
   `
   const Paragrah = styled.p`
     font-family: "AdihausDIN";

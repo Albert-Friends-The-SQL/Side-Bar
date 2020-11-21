@@ -54,7 +54,7 @@ const Modal = ({ open, onClose }) => {
       top: 5px;
       right: 5px;
       font-size: 32px;
-      font-family: 'Rubik';
+      font-family: 'Arial';
   `
   const Chart = styled.div`
     display: flex;
