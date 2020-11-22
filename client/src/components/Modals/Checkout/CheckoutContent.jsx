@@ -23,6 +23,7 @@ const CheckoutContent = (props) => {
     width: 50%; /* Could be more or less, depending on screen size */
     height: 35%;
     position: relative;
+    z-index: 1000;
   `
 
   const Exit = styled.button`

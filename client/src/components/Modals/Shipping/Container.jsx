@@ -6,7 +6,7 @@ const ShippingContainer = (props) => {
   const ShippingContainer = styled.div`
     display: flex;
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
