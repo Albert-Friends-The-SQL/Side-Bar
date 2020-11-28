@@ -49,7 +49,7 @@
   background-color: black;
   justify-content: space-between;
   font-family: "AdihausDIN";
-  font-size: 18px;
+  font-size: 14px;
   position: relative;
   cursor: pointer;
 }
@@ -116,7 +116,7 @@
   margin-left: 10px;
   cursor: pointer;
   font-size: 14px;
-  padding-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .original{
@@ -185,4 +185,19 @@ h2 {
 
 .warning {
   color: red;
+}
+
+.promotion:hover{
+  color: white;
+  background-color: black;
+}
+
+#size-guide:hover {
+  color: white;
+  background-color: black;
+}
+
+.outOfStock:hover{
+  color: white;
+  background-color: black;
 }
