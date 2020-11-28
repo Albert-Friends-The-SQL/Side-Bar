@@ -49,9 +49,10 @@
   background-color: black;
   justify-content: space-between;
   font-family: "AdihausDIN";
-  font-size: 14px;
+  font-size: 13px;
   position: relative;
   cursor: pointer;
+  letter-spacing: 2px;
 }
 .addToBag:before {
   content: '';
