@@ -19,22 +19,7 @@ const AddToBag = (props) => {
       return <img src="https://img.icons8.com/material-outlined/36/000000/like.png"/>
     }
   }
-  const Bag = styled.div`
-    display: flex;
-    align-items: center;
-  `
-  const AddButton = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  `
-  const Add = styled.div`
-    margin-left: 5%;
-  `
-  const Arrow = styled.div`
-    font-size: 20px;
-    margin-right: 5%;
-  `
+
 
   return (
   <Bag>
@@ -47,3 +32,20 @@ const AddToBag = (props) => {
 }
 
 export default AddToBag;
+
+const Bag = styled.div`
+display: flex;
+align-items: center;
+`
+const AddButton = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+`
+const Add = styled.div`
+margin-left: 5%;
+`
+const Arrow = styled.div`
+font-size: 20px;
+margin-right: 5%;
+`

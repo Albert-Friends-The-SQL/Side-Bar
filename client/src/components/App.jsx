@@ -6,10 +6,7 @@ import AddToBag from './AddToBag.jsx';
 import Promotion from './Promotion.jsx';
 import styled from 'styled-components';
 import axios from 'axios';
-import Shipping from './Modals/Shipping/Container.jsx';
 import Checkout from './Modals/Checkout/Checkout.jsx';
-import OutOfStock from './Modals/OutOfStock/Modal.jsx';
-import Payment from './Modals/Payment/Modal.jsx';
 import $ from 'jquery';
 
 
@@ -115,10 +112,7 @@ class App extends React.Component {
           <FindSize />
           <AddToBag mouseEnter={this.handleWishlistMouseEnter} mouseLeave={this.handleWishlistMouseLeave} mouseEnterStatus={this.state.mouseEnterWishlist} click={this.toggleWishlistStatus} toggle={this.state.wishlistClicked} checkout={this.handleCheckOut} />
           <Promotion />
-          <Shipping />
           <Checkout size={this.state.size} quantity={this.state.quantity} />
-          <OutOfStock />
-          <Payment />
         </div>
       )
     }

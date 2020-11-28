@@ -1,20 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import $ from 'jquery';
+import Modal from './Modals/OutOfStock/Content.jsx';
 const FindSize = (props) => {
-  const show = () => {
-    $('.findSizeChart').css('display', 'block')
-  }
+  const [isOpen, setIsOpen] = useState(false);
 
-  const showOutOfStock = () => {
-    $('.outofstock').css({
-      "visibility": "visible",
-      "opacity": "1"
-    })
-  }
   return (
   <div className="size-bottom-controls">
-    {/* <span className="findSize" onClick={show}><img src="http://integrations.fitanalytics.com/shop/adidas/adidas-icon-black.svg"/>Find your size</span> */}
-    <span className="outOfStock" onClick={showOutOfStock}>Size out of stock?</span>
+    <span className="outOfStock" onClick={()=> setIsOpen(true)}>Size out of stock?</span>
+    <Modal open={isOpen} onClose={() => setIsOpen(false)}/>
   </div>
   )
 }

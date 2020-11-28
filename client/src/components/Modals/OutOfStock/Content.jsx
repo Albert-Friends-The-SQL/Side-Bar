@@ -3,17 +3,77 @@ import styled from 'styled-components';
 import sizeTable from '../../../../../size.json'
 import Size from './Size.jsx'
 import $ from 'jquery';
+import ReactDOM from 'react-dom';
 
-const Content = () => {
+const Content = ({open, onClose}) => {
+  if (!open) return null;
 
-  const hide = () => {
-    $('.outofstock').css({
-      "visibility": "hidden",
-      "opacity": "0"
-    });
-  }
+  return ReactDOM.createPortal(
+    <>
+    <Overlay>
+      <Container>
+      <Header>Find My Size</Header>
+      <Exit onClick={onClose}>X</Exit>
+      <SubHeading>Select your size and we'll email you if it's back in stock</SubHeading>
+      <SizeHeader>Size <Required>*</Required></SizeHeader>
+      <SizeChart>
+        {sizeTable.map((shoe, index) => { return <Size shoe={shoe} key={index}>size</Size> }
+        )}
+      </SizeChart>
+      <div>
+        <Email type="email" placeholder='Email' required></Email>
+      </div>
+      <AgeDiv>
+        <form>
+          <input type="checkbox" name="age" />
+          <label htmlFor="age">Yes, I am over 13 years old <Required>*</Required></label>
+        </form>
+      </AgeDiv>
+      <AgeDiv>
+        <form>
+          <input type="checkbox" name="signup" />
+          <label htmlFor="signup">Sign me up to adidas Creators Club, featuring exclusive offers, latest product info, news about upcoming events and more. Please see our Terms & Conditions and Privacy Policy and Creators Club Terms & Conditions for more details. I agree to receive personalised email marketing messages from adidas America, Inc. and runtastic GmbH ("runtastic"). <Required>*</Required></label>
+        </form>
+      </AgeDiv>
+      <Button className="signUpButton"><Wrapper><SignUp>Sign Up</SignUp> <Arrow>→</Arrow></Wrapper></Button>
+      <Paragraph>By clicking Sign Up, you have read and agreed to the adidas <u>Privacy Notice</u></Paragraph>
+      </Container>
+    </Overlay>
+    </>,
+    document.getElementById('portal')
+  )
+}
 
-  const Header = styled.div`
+export default Content;
+
+const Container = styled.div`
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+background-color: #fefefe;
+margin: 12% auto; /* 15% from the top and centered */
+padding: 1%;
+border: 1px solid black;
+width: 50%; /* Could be more or less, depending on screen size */
+height: 60%;
+position: relative;
+transition: visibility 1s, opacity 0.5s;
+`
+
+const Overlay = styled.div`
+display: flex;
+position: fixed;
+z-index: 1000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100vh;
+background-color: rgba(0,0,0,0.5);
+justify-content: center;
+align-items: center;
+`
+
+const Header = styled.div`
     font-size: 28px;
     font-family: 'adineue PRO KZ Bold';
     height: 8%;
@@ -94,37 +154,3 @@ const Content = () => {
     justify-content: space-between;
     align-items: center;
   `
-  return (
-    <div>
-      <Header>Find My Size</Header>
-      <Exit onClick={hide}>X</Exit>
-      <SubHeading>Select your size and we'll email you if it's back in stock</SubHeading>
-      <SizeHeader>Size <Required>*</Required></SizeHeader>
-      <SizeChart>
-
-        {sizeTable.map((shoe, index) => { return <Size shoe={shoe} key={index}>size</Size> }
-        )}
-      </SizeChart>
-      <div>
-        <Email type="email" placeholder='Email' required></Email>
-      </div>
-      <AgeDiv>
-        <form>
-          <input type="checkbox" name="age" />
-          <label htmlFor="age">Yes, I am over 13 years old <Required>*</Required></label>
-        </form>
-      </AgeDiv>
-      <AgeDiv>
-        <form>
-          <input type="checkbox" name="signup" />
-          <label htmlFor="signup">Sign me up to adidas Creators Club, featuring exclusive offers, latest product info, news about upcoming events and more. Please see our Terms & Conditions and Privacy Policy and Creators Club Terms & Conditions for more details. I agree to receive personalised email marketing messages from adidas America, Inc. and runtastic GmbH ("runtastic"). <Required>*</Required></label>
-        </form>
-      </AgeDiv>
-      <Button className="signUpButton"><Wrapper><SignUp>Sign Up</SignUp> <Arrow>→</Arrow></Wrapper></Button>
-      <Paragraph>By clicking Sign Up, you have read and agreed to the adidas <u>Privacy Notice</u></Paragraph>
-    </div>
-
-  )
-}
-
-export default Content;
