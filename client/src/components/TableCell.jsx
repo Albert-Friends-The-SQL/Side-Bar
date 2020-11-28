@@ -4,23 +4,23 @@ import styled from 'styled-components';
 
 
 
-const TableCell = ({ click, shoe, index }) => {
-  const [isClicked, setIsClicked] = useState(false);
+const TableCell = ({ click, shoe, index, isClicked, setIsClicked ,setClickedIndex}) => {
+  // const [isClicked, setIsClicked] = useState(false);
   // clicking other cell will remove previous cell's selected css
   // clicking on current cell twice wont change seleceted css
-  
+
 
   const changeButton = () => {
     if (isClicked) {
       return (
         <ButtonActive className="outOfStockSize"
-        onClick={() => {click(shoe); setIsClicked(false)}} >
+        onClick={() => {click(shoe); setClickedIndex(index)}} >
          {shoe.size}
        </ButtonActive>
       )} else {
         return (
           <Button className="outOfStockSize"
-          onClick={() => {click(shoe); setIsClicked(true)}} >
+          onClick={() => {click(shoe); setClickedIndex(index)}} >
            {shoe.size}
          </Button>
         )
