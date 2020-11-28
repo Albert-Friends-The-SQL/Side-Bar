@@ -35,7 +35,7 @@ const Content = ({open, onClose}) => {
           <label htmlFor="signup">Sign me up to adidas Creators Club, featuring exclusive offers, latest product info, news about upcoming events and more. Please see our Terms & Conditions and Privacy Policy and Creators Club Terms & Conditions for more details. I agree to receive personalised email marketing messages from adidas America, Inc. and runtastic GmbH ("runtastic"). <Required>*</Required></label>
         </form>
       </AgeDiv>
-      <Button className="signUpButton"><Wrapper><SignUp>Sign Up</SignUp> <Arrow>→</Arrow></Wrapper></Button>
+      <Button className="signUpButton"><Wrapper><SignUp>SIGN UP</SignUp> <Arrow>→</Arrow></Wrapper></Button>
       <Paragraph>By clicking Sign Up, you have read and agreed to the adidas <u>Privacy Notice</u></Paragraph>
       </Container>
     </Overlay>
@@ -143,9 +143,12 @@ const Header = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-left: 5%;
   `
   const Arrow = styled.div`
-  font-size: 20px;
+  font-size: 13px;
   margin-right: 5%;
 `
 

@@ -46,6 +46,6 @@ const Add = styled.div`
 margin-left: 5%;
 `
 const Arrow = styled.div`
-font-size: 20px;
+font-size: 13px;
 margin-right: 5%;
 `
