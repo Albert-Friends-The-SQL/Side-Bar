@@ -75,7 +75,9 @@ Requires JSON with the following keys.
     {
       "product_id": "Number",
       "6": "Number",
-      // ...
+      .
+      .
+      .
       "reg_price": "Number",
       "color_1": "String",
     }
