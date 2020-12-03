@@ -1,15 +1,62 @@
-DROP DATABASE IF EXISTS Sizes;
+DROP DATABASE IF EXISTS sdc-side-bar;
 
-CREATE DATABASE Sizes;
+CREATE DATABASE sdc-side-bar;
 
-USE Sizes;
+\c sdc-side-bar;
 
-CREATE TABLE Shoes (
-  id int NOT NULL AUTO_INCREMENT,
-  color varchar(255) NOT NULL,
-  size varchar(255) NOT NULL,
-  price int NOT NULL,
-  quantity int NOT NULL,
-  name varchar(255) NOT NULL,
-  PRIMARY KEY(ID)
+CREATE TABLE products (
+  id INT SERIAL,
+  product_name TEXT,
+  ratings INT,
+  category_1 TEXT,
+  category_2 TEXT
 );
+
+-- CREATE INDEX product_variants ON product_name(city ASC);
+
+CREATE TABLE product_variants (
+  id INT SERIAL,
+  product_id INT REFERENCES products(id),
+  reg_price INT NOT NULL,
+  color_1 TEXT,
+  color_2 TEXT,
+  color_3 TEXT,
+  inventory JSON
+  -- CONSTRAINT fk_product
+  --   FOREIGN KEY(product_id)
+  --     REFERENCES products(product_id)
+  --     ON DELETE CASCADE
+);
+
+CREATE INDEX product_variants_asc ON product_variants(product_id ASC);
+
+CREATE TABLE inventory (
+  id INT SERIAL,
+  product_id INT REFERENCES products(id),
+  product_variant_id INT REFERENCES product_variants(id),
+  size TEXT,
+  stock INT
+);
+
+CREATE INDEX inventory_product_id_asc ON inventory(product_id ASC);
+CREATE INDEX inventory_product_variant_id_asc ON inventory(product_variant_id ASC);
+
+CREATE TABLE salePromos (
+  id INT SERIAL,
+  product_variant_id INT REFERENCES product_variants(id),
+  title TEXT,
+  content TEXT,
+  discount NUMERIC (3, 2)
+);
+
+-- CREATE TABLE colors (
+--   id INT SERIAL,
+--   product_id INT REFERENCES products_variants(id),
+--   color TEXT
+-- );
+
+-- CREATE TABLE categories (
+--   id INT SERIAL,
+--   product_variant_id INT REFERENCES product_variants(id),
+--   category TEXT
+-- );
