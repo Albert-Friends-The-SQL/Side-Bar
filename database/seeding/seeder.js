@@ -18,8 +18,10 @@ const generateProduct = () => {
   const ratings = random.number({ min: 1, max: totalUniqueProducts});
   const category_1 = lorem.word()
   const category_2 = lorem.word()
+  //simulate 25% of products are unisex
+  const unisex = random.number({ min: 1, max: 4}) === 1
 
-  return `${product_name},${ratings},${category_1},${category_2}\n`;
+  return `${product_name},${ratings},${category_1},${category_2},${unisex}\n`;
 }
 
 const generateProductVariant = () => {
@@ -34,45 +36,34 @@ const generateProductVariant = () => {
 
 const generateInventory = () => {
   let smallestSize = 6;
-  let largestSize = 15;
+  let largestSize = random.number({ min: 13, max: 15});
 
-  const generateInventoryItem = (size, gender) => {
+  const generateInventoryItem = (size) => {
     const product_id = random.number({ min: 1, max: totalUniqueProducts});
     const product_variant_id = random.number({ min: 1, max: totalProductVariants});
 
     //simulate 20% of sizes are 0
     const stock = random.number({ min: 0, max: 4});
 
-    // if (randomGender === 1) {
-    //   smallestSize = ;
-    //   largestSize = 15;
-    // }
-    // else {
-    //   smallestSize = 6.5;
-    //   largestSize = 14;
-    // }
     return `${product_id},${product_variant_id},${size},${stock}\n`;
   }
 
   while (smallestSize <= largestSize) {
-    //simulate 1/3 of products are unisex
-    let randomGender = random.number({ min: 1, max: 3});
-
-    generateInventoryItem(smallestSize, randomGender);
+    generateInventoryItem(smallestSize);
     smallestSize += 0.5;
   }
 }
 
-const salePromo = () => {
-  const product_variant_id = random.number({ min: 1, max: totalProductVariants});
-  const title = lorem.words();
-  const content = commerce.sentence();
-  //simulate 20% of items are on sale
-  let discount = random.number({min: 0, max: 500});
+// const salePromo = () => {
+//   const product_variant_id = random.number({ min: 1, max: totalProductVariants});
+//   const title = lorem.words();
+//   const content = commerce.sentence();
+//   //simulate 20% of items are on sale
+//   let discount = random.number({min: 0, max: 500});
 
-  if (discount > 100) discount = 0;
-  return `${product_variant_id},${title},${content},${discount}\n`;
-}
+//   if (discount > 100) discount = 0;
+//   return `${product_variant_id},${title},${content},${discount}\n`;
+// }
 
 
 const generateFakeUsers = (quantity) => {

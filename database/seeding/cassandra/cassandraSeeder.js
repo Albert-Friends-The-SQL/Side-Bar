@@ -8,7 +8,7 @@ const stream = fs.createWriteStream(filename)
 
 const { internet, random, commerce, date, company, image, lorem } = faker;
 
-const totalUniqueProducts = 10000000; //10000000
+const totalUniqueProducts = 100; //10000000
 const avgProductVariants = 2.5;
 const totalProductVariants = totalUniqueProducts * avgProductVariants;
 

@@ -1,10 +1,10 @@
 ## Server API
 
 ### Get product variant info
-  * GET `/api/product_variants/:product_variant_id`
+  * GET `/api/variants/:variant_id`
 
 **Path Parameters:**
-  * `product_variant_id` product variant id
+  * `variant_id` variant id
 
 **Success Status Code:** `200`
 
@@ -12,9 +12,9 @@
 
 ```json
     {
-      "product_variant_id": "Number",
+      "variant_id": "Number",
       "product_id": "String",
-      "product_name": "String",
+      "variant_name": "String",
       "ratings": "INT",
       "category_1": "String",
       "category_2": "String",
@@ -22,13 +22,12 @@
       "color_1": "String",
       "color_2": "String",
       "color_3": "String",
-      "in_stock_sizes": "JSON",
-      "sale_promotion": "JSON"
+      "in_stock_sizes": "Number[]"
     }
 ```
 
 ### Add product variant
-  * POST `/api/product_variants`
+  * POST `/api/variants`
 
 **Success Status Code:** `201`
 
@@ -39,7 +38,7 @@ Requires JSON with the following keys:
 ```json
     {
       "product_id": "Number",
-      "product_name": "String",
+      "variant_name": "String",
       "category_1": "String",
       "reg_price": "Number",
       "color_1": "String",
@@ -51,7 +50,6 @@ The following optional keys may also be included:
 
 ```json
     {
-      "ratings": "Number",
       "category_2": "String",
       "color_2": "String",
       "color_3": "String",
@@ -59,10 +57,10 @@ The following optional keys may also be included:
 ```
 
 ### Update product variant info
-  * PATCH `/api/product_variants/:product_variant_id`
+  * PATCH `/api/variants/:variant_id`
 
 **Path Parameters:**
-  * `product_variant_id` product variant id
+  * `variant_id` variant id
 
 **Success Status Code:** `204`
 
@@ -71,7 +69,7 @@ The following optional keys may also be included:
 ```json
     {
       "product_id": "Number",
-      "product_name": "String",
+      "variant_name": "String",
       "category_1": "String",
       "category_2": "String",
       "reg_price": "Number",
@@ -83,20 +81,20 @@ The following optional keys may also be included:
 ```
 
 ### Delete product variant
-  * DELETE `/api/product_variants/:product_variant_id/`
+  * DELETE `/api/variants/:variant_id/`
 
 **Path Parameters:**
-  * `product_variant_id` product variant id
+  * `variant_id` variant id
 
 **Success Status Code:** `204`
 
 ---
 
 ### Get product variant inventory
-  * GET `/api/product_variants/:product_variant_id/inventory`
+  * GET `/api/variants/:variant_id/inventory`
 
 **Path Parameters:**
-  * `product_variant_id` product variant id
+  * `variant_id` variant id
 
 **Success Status Code:** `200`
 
@@ -113,7 +111,7 @@ The following optional keys may also be included:
 ```
 
 ### Add inventory
-  * POST `/api/product_variants/:product_variant_id/inventory`
+  * POST `/api/variants/:variant_id/inventory`
 
 **Success Status Code:** `201`
 
@@ -130,10 +128,10 @@ Requires JSON with the following keys.
 ```
 
 ### Update inventory
-  * PATCH `/api/product_variants/:product_variant_id/inventory`
+  * PATCH `/api/variants/:variant_id/inventory`
 
 **Path Parameters:**
-  * `product_variant_id` product variant id
+  * `variant_id` product variant id
 
 **Success Status Code:** `204`
 
@@ -148,7 +146,7 @@ Requires JSON with the following keys.
     }
 ```
 
----
+<!-- ---
 
 ### Get product info
   * GET `/api/products/:product_id`
@@ -215,4 +213,4 @@ Requires JSON with the following keys.
 **Path Parameters:**
   * `product_id` product id
 
-**Success Status Code:** `204`
+**Success Status Code:** `204` -->
