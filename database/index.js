@@ -1,16 +1,4 @@
-// var mysql = require('mysql');
-// var connection = mysql.createConnection({
-//   user : 'root',
-//   password : 'student',
-//   database : 'Sizes'
-// });
-
-// connection.connect((err) => {
-//   if (err) console.log(err);
-//   console.log('MYSQL server connected!');
-// });
-
-// module.exports = connection;
+// Postgres
 
 const { Pool } = require('pg');
 const pool = new Pool({
@@ -26,8 +14,24 @@ pool.connect()
     console.log('db connected');
   });
 
+
+// Cassandra
+const cassandra = require('cassandra-driver');
+
+const client = new cassandra.Client({
+  contactPoints: ['127.0.0.1'],
+  localDataCenter: 'datacenter1',
+  keyspace: 'sdc'
+})
+  // .then(() => {
+  //   console.log('cass db connected');
+  // });
+
 module.exports = {
   query: (text, params, callback) => {
     return pool.query(text, params, callback)
+  },
+  execute: (text, key, callback) => {
+    return client.execute(text, key, callback)
   },
 }

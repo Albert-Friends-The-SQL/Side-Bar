@@ -8,7 +8,7 @@ const stream = fs.createWriteStream(filename)
 
 const { internet, random, commerce, date, company, image, lorem } = faker;
 
-const totalUniqueProducts = 100; //10000000
+const totalUniqueProducts = 10000000; //10000000
 const avgProductVariants = 2.5;
 const totalProductVariants = totalUniqueProducts * avgProductVariants;
 
@@ -99,11 +99,11 @@ const writeCSV = (writeStream, encoding, done, generatorFunc) => {
 
 const variantsHeader = `variant_id,product_id,variant_name,ratings,category_1,category_2,unisex,reg_price,color_1,color_2,color_3\n`;
 
-// stream.write(variantsHeader, 'utf-8');
-// writeCSV(stream, 'utf-8', () => {
-//   stream.end()
-// }, generateVariant)
+stream.write(variantsHeader, 'utf-8');
+writeCSV(stream, 'utf-8', () => {
+  stream.end()
+}, generateVariant)
 
 
-writeInventoryCSV();
+// writeInventoryCSV();
 

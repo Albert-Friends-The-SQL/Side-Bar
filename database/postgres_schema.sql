@@ -6,19 +6,22 @@ CREATE DATABASE sdc;
 
 CREATE TABLE products (
   id SERIAL PRIMARY KEY,
-  ratings INT,
-  category_1 TEXT,
+  ratings INT DEFAULT 0,
+  category_1 TEXT NOT NULL,
   category_2 TEXT,
-  unisex BOOLEAN
+  unisex BOOLEAN NOT NULL
 );
 
-CREATE TABLE test_products (
-  id SERIAL PRIMARY KEY,
-  ratings INT,
-  category_1 TEXT,
-  category_2 TEXT,
-  unisex BOOLEAN
-);
+-- CREATE TABLE test_products (
+--   id SERIAL PRIMARY KEY,
+--   ratings INT DEFAULT 0,
+--   category_1 TEXT NOT NULL,
+--   category_2 TEXT,
+--   unisex BOOLEAN NOT NULL
+-- );
+
+ALTER TABLE products
+ALTER COLUMN ratings SET DEFAULT 0;
 
 -- CREATE INDEX products_asc ON products (id ASC);
 
@@ -36,25 +39,22 @@ CREATE TABLE variants (
       ON DELETE CASCADE
 );
 
-CREATE TABLE test_variants (
-  id SERIAL PRIMARY KEY,
-  product_id INT NOT NULL REFERENCES test_products(id),
-  variant_name TEXT NOT NULL,
-  reg_price INT NOT NULL,
-  color_1 TEXT NOT NULL,
-  color_2 TEXT,
-  color_3 TEXT,
-  CONSTRAINT fk_product
-    FOREIGN KEY(product_id)
-      REFERENCES products(id)
-      ON DELETE CASCADE
-);
+-- CREATE TABLE test_variants (
+--   id SERIAL PRIMARY KEY,
+--   product_id INT NOT NULL REFERENCES test_products(id),
+--   variant_name TEXT NOT NULL,
+--   reg_price INT NOT NULL,
+--   color_1 TEXT NOT NULL,
+--   color_2 TEXT,
+--   color_3 TEXT,
+--   CONSTRAINT fk_product
+--     FOREIGN KEY(product_id)
+--       REFERENCES products(id)
+--       ON DELETE CASCADE
+-- );
 
-ALTER TABLE test_variants
-ALTER COLUMN variant_name,
-ALTER COLUMN reg_price,
-ALTER COLUMN color_1
--- CREATE INDEX product_variants_asc ON variants(product_id ASC);
+
+-- CREATE INDEX product_variants_asc ON variants(product_id ASC, id ASC);
 
 CREATE TABLE inventory (
   id SERIAL PRIMARY KEY,
@@ -62,20 +62,20 @@ CREATE TABLE inventory (
   size float(1),
   stock INT
 );
-  CONSTRAINT fk_product
-    FOREIGN KEY(variant_id)
-      REFERENCES variants(id)
-      ON DELETE CASCADE
+  -- CONSTRAINT fk_product
+  --   FOREIGN KEY(variant_id)
+  --     REFERENCES variants(id)
+  --     ON DELETE CASCADE
 
 -- CREATE INDEX inventory_variant_id_asc ON inventory(variant_id ASC);
 -- CREATE INDEX inventory_product_variant_id_asc ON inventory(product_variant_id ASC);
 
-CREATE TABLE test_inventory (
-  id SERIAL PRIMARY KEY,
-  variant_id INT REFERENCES test_variants(id),
-  size float(1),
-  stock INT
-);
+-- CREATE TABLE test_inventory (
+--   id SERIAL PRIMARY KEY,
+--   variant_id INT REFERENCES test_variants(id),
+--   size float(1),
+--   stock INT
+-- );
 
 
 COPY products(ratings, category_1, category_2, unisex)
