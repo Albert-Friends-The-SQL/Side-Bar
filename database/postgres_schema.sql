@@ -68,7 +68,7 @@ CREATE TABLE inventory (
   --     ON DELETE CASCADE
 
 -- CREATE INDEX inventory_variant_id_asc ON inventory(variant_id ASC);
--- CREATE INDEX inventory_product_variant_id_asc ON inventory(product_variant_id ASC);
+-- CREATE INDEX variant_id_asc ON inventory(variant_id ASC);
 
 -- CREATE TABLE test_inventory (
 --   id SERIAL PRIMARY KEY,
