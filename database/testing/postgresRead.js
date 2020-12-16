@@ -6,31 +6,25 @@ import faker from 'https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.
 var myErrorCounter = new Counter("my_error_counter");
 
 export let options = {
-  vus: 100,
-  duration: '5s'
-  // stages: [
-  //   { duration: '2m', target: 100 }, // below normal load
-  //   { duration: '5m', target: 100 },
-  //   { duration: '2m', target: 200 }, // normal load
-  //   { duration: '5m', target: 200 },
-  //   { duration: '2m', target: 300 }, // around the breaking point
-  //   { duration: '5m', target: 300 },
-  //   { duration: '2m', target: 400 }, // beyond the breaking point
-  //   { duration: '5m', target: 400 },
-  //   { duration: '10m', target: 0 }, // scale down. Recovery stage.
-  // ],
+  stages: [
+    { duration: "10s", target: 500 },
+  ],
+  thresholds: {
+    http_req_duration: ['p(99)<1500'], // 99% of requests must complete below 1.5s
+  },
 };
 
 
 
 export default function () {
-  const randomVariantId = faker.random.number({ min: 1, max: 25000000});
+  const randomVariantId = faker.random.number({ min: 1, max: 10000000});
 
   // READ
   let res = http.get(`http://localhost:3000/api/variants/${randomVariantId}`);
   if (res.status !== 200) {
     myErrorCounter.add(1);
   }
+  sleep(1);
 }
 
 
