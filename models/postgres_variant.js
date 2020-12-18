@@ -20,7 +20,11 @@ exports.read = async (res, id) => {
   const inventoryQuery = `SELECT size, stock FROM inventory WHERE variant_id = ${id} AND stock > 0`;
   let variantData = await database.query(variantQuery);
   const inventoryData = await database.query(inventoryQuery);
-  // SELECT size, stock FROM inventory WHERE variant_id = 25 AND stock > 0;
+
+  // const combineQueries = (query1, query2) => {
+  //   return Promise.all([database.query(variantQuery), database.query(inventoryQuery)]);
+  // }
+  // const [variantData, inventoryData] = await combineQueries(variantQuery, inventoryQuery);
 
   try {
     variantData.rows[0].inventory = inventoryData.rows;
