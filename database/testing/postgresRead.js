@@ -7,7 +7,13 @@ var myErrorCounter = new Counter("my_error_counter");
 
 export let options = {
   stages: [
+    { duration: "5s", target: 100 },
+    { duration: "5s", target: 250 },
     { duration: "10s", target: 500 },
+    { duration: "5s", target: 100 },
+    // { duration: "10s", target: 200 },
+    // { duration: "1s", target: 500 },
+    // { duration: "5s", target: 800 },
   ],
   thresholds: {
     http_req_duration: ['p(99)<1500'], // 99% of requests must complete below 1.5s
@@ -20,7 +26,7 @@ export default function () {
   const randomVariantId = faker.random.number({ min: 1, max: 10000000});
 
   // READ
-  let res = http.get(`http://localhost:3000/api/variants/${randomVariantId}`);
+  let res = http.get(`http://54.183.181.200:3000/api/variants/${randomVariantId}`);
   if (res.status !== 200) {
     myErrorCounter.add(1);
   }
